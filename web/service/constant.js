@@ -67,6 +67,7 @@ app.factory('constantService', [
 
     constants.accessPreset = [
       [constants.permission.NONE,   constants.permission.NONE],
+      [constants.permission.PARTIAL, constants.permission.PARTIAL],
       [constants.permission.PUBLIC, constants.permission.SHARED]
     ];
     constants.accessPreset.parties = [
