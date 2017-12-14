@@ -3,7 +3,7 @@
   <button ng-click="volumeEditAccessForm.resetAll()" ng-disabled="volumeEditAccessForm.$pristine || volumeEditAccessForm.$submitted" class="foot">Revert</button>
 
   <fieldset class="sub-bottom radio-set volume-edit-access-radioset" ng-disabled="!page.models.Login.checkAuthorization(page.permission.EDIT)" ng-form="accessPresetForm">
-    <legend message="access.preset.legend"></legend>
+    <legend class="access-legend" message="access.preset.legend"></legend>
     <div class="col message message-yellow message-content" ng-if="::!page.models.Login.checkAuthorization(page.permission.EDIT)" message="access.preset.restricted"></div>
     <div id="preset" ng-repeat="perms in page.constants.accessPreset track by $index">
       <input type="radio" ng-model="volumeEditAccessForm.preset" name="access-preset" ng-value="$index">
@@ -20,8 +20,8 @@
       You can change this on the <span message="wizard.volume-edit-assist.name"></span> tab.
     </div>
 
-  <fieldset>
-    <legend message="access.grant.legend"></legend>
+  <fieldset class="margin-more">
+    <legend class="access-legend" message="access.grant.legend"></legend>
     <scroll-float>
       <fieldset class="clean" ng-class="scrollFloating? '' : 'skinny-top clean foot'">
         <div class="col-desktop-5 col-tablet-4 col-mobile-3" ng-show="scrollFloating">
