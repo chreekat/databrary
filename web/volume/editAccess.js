@@ -21,8 +21,12 @@ app.directive('volumeEditAccessForm', [
         if (form.preset == null)
           return;
         form.$setSubmitted();
+        var sharefull = false;
         $q.all(constants.accessPreset[form.preset].map(function (a, pi) {
-          volume.accessSave(constants.accessPreset.parties[pi], a);
+          if (form.preset === 2) {
+            sharefull = true;
+          }
+          volume.accessSave(constants.accessPreset.parties[pi], a, sharefull);
         })).then(function () {
           messages.add({
             body: constants.message('access.preset.save.success'),

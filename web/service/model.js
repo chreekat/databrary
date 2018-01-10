@@ -469,6 +469,8 @@ app.factory('modelService', [
         this.metrics = _.groupBy(init.metrics, function (m) { return constants.metric[m].category; });
       if ('publicsharefull' in init)
         this.publicsharefull = init.publicsharefull
+        
+      console.log(init);
     };
 
     function volumeMake(init) {
@@ -615,10 +617,11 @@ app.factory('modelService', [
       }
     }
 
-    Volume.prototype.accessSave = function (target, data) {
+    Volume.prototype.accessSave = function (target, data, sharefull) {
       var v = this;
+      sharefull = sharefull || false;
       if (typeof data !== 'object')
-        data = {individual:data, children: data};
+        data = {individual:data, children: data, share_full: sharefull};
       return router.http(router.controllers.postVolumeAccess, this.id, target, data)
         .then(function (res) {
           subPartyUpdate(v.access, res.data);
