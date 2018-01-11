@@ -2,7 +2,7 @@
   <panel top id="panel-overview-volume" panel-title="volume.overview.title">
     <volume-overview></volume-overview>
   </panel>
-  <panel id="panel-excerpts" panel-title="excerpts.title" fold ng-if="::volume.excerpts.length || volume.checkPermission(page.permission.EDIT)">
+  <panel id="panel-excerpts" panel-title="excerpts.title" fold ng-if="(::volume.excerpts.length || volume.checkPermission(page.permission.EDIT)) && checkpublicsharefull">
     <volume-excerpts release></volume-excerpts>
   </panel>
   <panel id="panel-data" panel-title="data.title" ng-if="checkpublicsharefull" edit-link="{{::volume.checkPermission(page.permission.EDIT) ? volume.editRoute('data') : ''}}" fold>

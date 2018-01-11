@@ -12,7 +12,8 @@
         <span message="access.preset.title{{::$index}}" tooltip="'access.preset.select{{::$index}}' | message"></span>
       </label>
     </div>
-    <div class="col message message-yellow message-content" ng-if="volumeEditAccessForm.preset">To be sure that everything on your shared volume appears as you intend, you can review your <a ng-href="{{::volume.route()}}" target="_blank">volume</a> and use the <a ng-href="{{::volume.route()}}#panel-data" target="_blank">spreadsheet summary</a> to check for errors.</div>
+    <div class="col message message-yellow message-content" ng-if="volumeEditAccessForm.preset===1">Only the volume title, description, collaborators (if any), citation information, and file summary table will be shared. Go to the Overview tab to update.</div>
+    <div class="col message message-yellow message-content" ng-if="volumeEditAccessForm.preset===2">All volume information, including data files, will be shared. (Access to individual files is still determined by file-level settings.)</div>
   </fieldset>
 
     <div class="foot-15x i" ng-if="volume.accessStaff">
