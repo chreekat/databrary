@@ -104,8 +104,7 @@
     <img class="panel-overview-volume-thumb" ng-src="{{::volume.thumbRoute()}}">
     <div ng-if="::volume.accessPreset != null" class="panel-overview-volume-access foot">
       <span class="icon" ng-class="::'access'+{{::volume.accessPreset}}"></span>
-      <span message="access.preset.title{{::volume.accessPreset}}"></span> 
-      <span>volume</span>
+      <span message="access.preset.description{{::volume.accessPreset}}"></span> 
     </div>
     <show-investigators investigators-title="contributors" minlevel="ADMIN"></show-investigators>
     <show-investigators investigators-title="private" maxlevel="ADMIN" minlevel="READ"></show-investigators>

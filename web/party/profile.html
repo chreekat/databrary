@@ -7,10 +7,10 @@
       <div class="profile-volume-sort">
         <small>Sort volumes by </small>
         <button class="mini white" ng-class="{'neutral selected':volumeSort==='name'}" ng-click="sortVolumes('name')">Name</button>
-        <button class="mini white" ng-class="{'neutral selected':volumeSort==='access'}" ng-click="sortVolumes('access')">
+        <!-- need to bring it back <button class="mini white" ng-class="{'neutral selected':volumeSort==='access'}" ng-click="sortVolumes('access')">
           <span class="icon access1"></span>
           <span>Shared</span>
-        </button>
+        </button> -->
         <button class="mini white" ng-class="{'neutral selected':volumeSort==='permission'}" ng-click="sortVolumes('permission')">Access</button>
       </div>
       <div ng-if="::volumes.length<=1&&!volumes[0].length"><span class="status">You aren't associated with any volumes.</span></div>
@@ -28,7 +28,7 @@
               <span ng-click="v.select()" class="icon" ng-class="v.class()" tooltip="'Click to highlight ' + ('profile.volumes.selected' | message:'this volume')"></span>
             </div>
             <div class="profile-right-icons">
-              <span class="icon access1" ng-show="::v.volume.accessPreset" tooltip="'access.preset.title'+v.volume.accessPreset | message"></span>
+              <!-- need to bring it back <span class="icon" ng-class="::'access' + v.volume.accessPreset" ng-show="::v.volume.accessPreset" tooltip="'access.preset.title'+v.volume.accessPreset | message"></span> -->
               <span class="icon" ng-class="::{'network': v.self.children}" tooltip="v.self.children? 'Your group affiliates have access' : 'Your group affiliates do not have access'"></span>
               <span class="icon user-access" ng-class="::page.constants.permission[v.volume.permission]" tooltip="'access.'+page.constants.permission[v.volume.permission] | message:'You'"></span>
             </div>

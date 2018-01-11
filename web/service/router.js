@@ -356,7 +356,7 @@ app.provider('routerService', [
         volume: [
           'pageService', function (page) {
             return page.models.Volume.get(page.$route.current.params.id,
-              {access:true, citation:true, links:true, funding:true, top:true, tags:true, excerpts:true, comments:true, records:true, containers:'all', metrics:true, state:true, publicsharefull: false});
+              {access:true, citation:true, links:true, funding:true, top:true, tags:true, excerpts:true, comments:true, records:true, containers:'all', metrics:true, state:true});
           }
         ]
       },

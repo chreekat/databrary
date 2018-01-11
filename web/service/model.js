@@ -433,6 +433,7 @@ app.factory('modelService', [
       funding: false,
       tags: false,
       state: false,
+      publicaccess: false,
       publicsharefull: false,
       // consumers: false,
       // producers: false,
@@ -443,7 +444,7 @@ app.factory('modelService', [
       Model.prototype.init.call(this, init);
       if ('access' in init) {
         this.access = partyMakeSubArray(init.access);
-        volumeAccessPreset(this);
+        volumeAccessPreset(this, init.publicaccess);
       }
       if ('records' in init) {
         l = init.records;
@@ -469,8 +470,8 @@ app.factory('modelService', [
         this.metrics = _.groupBy(init.metrics, function (m) { return constants.metric[m].category; });
       if ('publicsharefull' in init)
         this.publicsharefull = init.publicsharefull
-        
-      console.log(init);
+      if ('publicaccess' in init)
+        this.publicaccess = init.publicaccess
     };
 
     function volumeMake(init) {
@@ -591,7 +592,8 @@ app.factory('modelService', [
       return router.volumeCSV([this.id]);
     };
 
-    function volumeAccessPreset(volume) {
+    function volumeAccessPreset(volume, publicaccess) {
+      publicaccess = publicaccess || false;
       if (!volume.access)
         return;
       var p = [];
@@ -614,6 +616,9 @@ app.factory('modelService', [
         volume.access = al;
         volume.accessStaff = staff;
         volume.accessPreset = pi;
+        if (publicaccess === "full") {
+          volume.accessPreset = 2;
+        }
       }
     }
 
@@ -625,7 +630,7 @@ app.factory('modelService', [
       return router.http(router.controllers.postVolumeAccess, this.id, target, data)
         .then(function (res) {
           subPartyUpdate(v.access, res.data);
-          volumeAccessPreset(v);
+          volumeAccessPreset(v, res.data.share_full);
           return v;
         });
     };
