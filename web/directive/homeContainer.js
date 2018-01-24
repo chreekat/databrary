@@ -96,6 +96,13 @@ app.directive('homeContainer', [
           if(google !== null && typeof google === 'object' && typeof google.maps === 'object'){
             google.maps = null;
           }
+          var i;
+          var x = document.getElementsByTagName("script");
+          for (i = 0; i < x.length; i++) {
+            if(x[i].src.indexOf('https://maps.googleapis.com') !== -1){
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
         });
  
         jQuery(function($) {
