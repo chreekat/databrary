@@ -56,17 +56,19 @@ app.directive('homeContainer', [
           if (stopCarousel === false) {
             var i;
             var x = document.getElementsByClassName("testimonial");
-            for (i = 0; i < x.length; i++) {
-               x[i].style.opacity = "0";
-               x[i].style.zIndex = "0";
+            if(x.length > 0){
+              for (i = 0; i < x.length; i++) {
+                 x[i].style.opacity = "0";
+                 x[i].style.zIndex = "0";
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.opacity = "1";
+              x[myIndex-1].style.zIndex = "2"; 
+              slideIndex = myIndex;
+            
+              setTimeout(carousel, 8000);
             }
-            myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
-            x[myIndex-1].style.opacity = "1";
-            x[myIndex-1].style.zIndex = "2"; 
-            slideIndex = myIndex;
-          
-            setTimeout(carousel, 8000);
           }
         }
 
@@ -89,6 +91,19 @@ app.directive('homeContainer', [
           stopCarousel = true;
           showDivs(slideIndex += n);
         }
+
+        $scope.$on('$destroy', function(){
+          if(google !== null && typeof google === 'object' && typeof google.maps === 'object'){
+            google.maps = null;
+          }
+        });
+ 
+        jQuery(function($) {
+          // Asynchronously Load the map API 
+          var script = document.createElement('script');
+          script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBZRvCMW10DAK5WKF9QCgtNWdmhkwpGinc&callback=initMap";
+          document.getElementsByTagName("main")[0].appendChild(script);
+        });
 
       }
     };
