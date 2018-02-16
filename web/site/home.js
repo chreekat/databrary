@@ -1,8 +1,8 @@
 'use strict';
 
 app.controller('site/home', [
-  '$scope', 'constantService', 'displayService', 'volume', 'tags', 'activity', 
-  function ($scope, constants, display, volume, tags, activity) {
+  '$scope', 'constantService', 'displayService', 'volume', 'tags', 'activity', '$location',
+  function ($scope, constants, display, volume, tags, activity, $location) {
     display.title = constants.message('welcome.title');
     $scope.volume = volume;
     $scope.tags = tags;
@@ -27,6 +27,6 @@ app.controller('site/home', [
         }
     }
 
-
+    $('body').addClass($location.search().font);
   }
 ]);

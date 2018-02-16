@@ -1,139 +1,281 @@
-<article class="view home-view">
-  <div class="wrap">
-    <div class="row">
-      <div class="home-logo">
-        <a ng-href="{{::page.router.index()}}" title="Databrary: An Open Data Library"><img ng-if="::!page.constants.sandbox" src="/web/images/logo/databrary-nav.svg"><img ng-if="::page.constants.sandbox" src="/web/images/logo/databrary-demo.svg"></a>
+<article class="view home-view" home-container>
+  <div class="home-bigbuttons section white">
+    <div class="heading">
+      <div class="logo-white"></div>
+      Video data library for behavioral scientists
+    </div>
+    <div class="login-register">
+      <a ng-href="{{::page.router.login()}}" class="modal-button" ng-hide="::page.models.Login.isLoggedIn()">
+        <button class="login-button">Login</button>
+      </a>
+      <a ng-href="{{::page.router.profile()}}" ng-show="::page.models.Login.isLoggedIn()">
+        <button class="login-button">Your Profile</button>
+      </a>
+      <a ng-href="{{::page.router.register()}}">
+        <button class="register-button">Register</button>
+      </a>
+    </div>
+    <div class="home-max-width">
+      <div>
+        <a ng-href="{{::page.router.search()}}?volume">
+          <div class="green-top">
+            <p><strong>Find Clips</strong>
+              <br />
+              Find video and audio clips for presentations and to learn about procedures
+            </p>
+          </div>
+        </a>
+        <a ng-href="{{::page.router.profile()}}" class="opener">
+          <div class="green-top">
+            <p><strong>Archive Data</strong>
+              <br />
+              Securely and permanently store all your project information, research data, and procedures
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="open-panel">
+        <p style="margin-bottom: 25px;">Databrary is a secure, web-based repository to store all of your research products (e.g., audio and video data files, participant demographics and other study metadata, instrumentation and stimuli, procedural videos, coding manuals, and analysis scripts). Backed by the full support of New York University's IT Department, Databrary provides free archival storage to preserve your data in usable form indefinitely. With participant permission, you can then choose to <a href="https://www.databrary.org/resources/data-sharing-manifesto.html">share your research with the Databrary community</a>.</p>
+        <p><a href="https://www.databrary.org/resources/guide/investigators/contributing.html">Get more information</a>, and login or register now to get started.</p>
+      </div>
+      <div>
+        <a ng-href="{{::page.router.profile()}}" class="opener">
+          <div class="green-top">
+            <p><strong>Share Data</strong>
+              <br />
+              Improve transparency and reproducibility by sharing data and documenting procedures
+            </p>
+          </div>
+        </a>
+        <a ng-href="{{::page.router.search()}}?volume">
+          <div class="green-top">
+            <p><strong>Use Data</strong>
+              <br />
+              Use shared data to answer new questions
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="open-panel">
+        <p>When developmental scientists share research data (e.g., CHILDES, AddHealth, ECLS, Early Head Start), the field grows and prospers. In addition, data sharing:</p>
+        <ul>
+          <li>meets funder and journal requirements,</li>
+          <li>reflects our duty to participants and other scientists,</li>
+          <li>improves scientific practices by increasing transparency and reproducibility, and</li>
+          <li>expands our influence as researchers.</li>
+        </ul>
+        <p>Read Databrary's <a href="https://www.databrary.org/resources/data-sharing-manifesto.html">Data Sharing Manifesto</a>, and login or register now to get started.</p>
       </div>
     </div>
+    <div class="arrow-container"><a class="arrow-a"><span class="arrow-down"></span></a></div>
   </div>
-  <div class="home-bigbuttons">
+  <div class="p-container section">
+  <h2 class="header">Video as data and documentation</h2>
+    <!-- NYU Slider -->
+    <div class="streamall">
+      <!--  stream  -->
+      <div class="stream-container">
+        <div class="stream-nav left">
+        </div>
+        <div class="stream-nav right">
+        </div>
+        <div class="stream-viewport" id="stream-viewport">
+          <ul class="stream">
+            <li class="col-f slug1 ord-1">
+            <div id="first-tile" class="block features full-height">
+              <a target="_blank" href="/volume/112">
+                <div class="asset-display">
+                  <video controls="" seek="clip"><source type="video/mp4" src="https://nyu.databrary.org/slot/9860/-/asset/16631/download?inline=true"></video>
+                </div>
+              </a>
+              <p class="citation">Fausey, C.M., Smith, L.B. &amp; Jayaraman, S. (2015). From faces to hands: Changing visual input in the first two years. <em>Databrary</em>. Retrieved January 29, 2018 from <a href="http://doi.org/10.17910/B7JS39">http://doi.org/10.17910/B7JS39</a>.</p>
+            </div>
+            </li>
+            <li class="col-1 slug1 ord-2">
+            <div class="block single promo dark " style="">
+              <span>
+              <a target="_blank" href="https://www.databrary.org/news.html" class="ui-link">Visit Databrary at ICIS 2018 in Philadelphia</a>
+              </span>
+            </div>
+            
+            <div class="block single promo light">
+              <span><a target="_blank" href="https://www.databrary.org/about/press-and-publications.html" class="ui-link">See our new publications</a>
+                </span>
+            </div>
+            </li>
+            <li class="col-f slug1 ord-1">
+            <div id="first-tile" class="block features full-height">
+              <a target="_blank" href="https://www.databrary.org/volume/9">
+                <div class="asset-display">
+                  <img src="https://www.databrary.org/volume/9/thumb?size">
+                </div>
+              </a>
+              <p class="citation">Adolph, K. (2014). Children's social and motor play on a playground. <em>Databrary</em>. Retrieved January 29, 2018 from <a href="http://doi.org/10.17910/B77P4V">http://doi.org/10.17910/B77P4V</a>.</p>
+            </div>
+            </li>
+            <li class="col-1 slug1 ord-2">
+            <div class="block single promo dark " style="">
+              <span>
+              <a target="_blank" href="https://www.databrary.org/about/why-share.html" class="ui-link">Share your data!</a>
+              </span>
+            </div>
+            
+            <div class="block single promo light">
+              <span><a target="_blank" href="https://www.databrary.org/resources/guide/investigators/citing.html" class="ui-link">Remember to cite Databrary &amp; the volume DOI in your publications &amp; presentations</a>
+                </span>
+            </div>
+            </li>
+            <li class="col-f slug1 ord-1">
+            <div id="first-tile" class="block features full-height">
+              <a target="_blank" href="/volume/34">
+                <div class="asset-display"><video controls="" seek="clip"><source type="video/mp4" src="https://nyu.databrary.org/slot/9826/-/asset/11254/download?inline=true"></video></div>
+              </a>
+              <p class="citation">Frank, M.C. (2014). Development of infants’ attention to faces during the first year. <em>Databrary</em>. Retrieved January 29, 2018 from <a href="http://doi.org/10.17910/B7K01X">http://doi.org/10.17910/B7K01X</a>.</p>
+            </div>
+            </li>
+            <li class="col-1 slug1 ord-2">
+            <div class="block single promo dark " style="">
+              <span>
+              <a target="_blank" href="https://psych.nyu.edu/adolph/publications/GilmoreAdolph-inpress-NatureVideoReproducible.pdf" class="ui-link">Share procedural videos to make your methods more transparent</a>
+              </span>
+            </div>
+            
+            <div class="block single promo light">
+              <span><a target="_blank" href="https://www.software.ac.uk/blog/2017-08-04-video-and-reproducibility-behavioural-sciences" class="ui-link">Failure to reproduce = Opportunity to learn about contextual variation</a>
+                </span>
+            </div>
+            </li>
+            <li class="col-f slug1 ord-1">
+            <div id="first-tile" class="block features full-height">
+              <div class="asset-display">
+                <a target="_blank" href="/volume/70"><img src="https://nyu.databrary.org/slot/11883/-/asset/45810/download?inline=true"></a>
+              </div>
+              <p class="citation">Baker, D. (2014). Arnold Gesell’s Films of Infant and Child Development. <em>Databrary</em>. Retrieved January 29, 2018 from <a href="http://doi.org/10.17910/B7.70">http://doi.org/10.17910/B7.70</a>.</p>
+            </div>
+            </li>
+            <li class="col-1 slug1 ord-2">
+            <div class="block single promo dark " style="">
+              <span>
+              <a target="_blank" href="https://www.databrary.org/resources/guide/investigators/contributing.html" class="ui-link">Keep your project organized - store materials and demographics with your video data</a>
+              </span>
+            </div>
+            
+            <div class="block single promo light">
+              <span><a target="_blank" href="https://www.databrary.org/resources/policies/work-with-irb.html" class="ui-link">Best practices for talking to your IRB</a>
+                </span>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--  /stream  -->
+    </div>
+    <!-- NYU Slider -->
+    <div class="arrow-container"><a class="arrow-a"><span class="arrow-down"></span></a></div>
+  </div>
+  <!--testimonials begins-->
+  <div class="testimonial-container section">
+    <h2 class="header">Researchers depend on Databrary</h2>
+    <div class="testimonials stream-container">
+      <div class="testimonial">
+        <div class="center-container">
+          <a target="_blank" href="/party/546">
+            <img src="http://kathyhirshpasek.com/wp-content/themes/genesis-sample/images/kathy-hirsh-pasek-headshot.jpg" class="alignleft">
+          </a>
+        </div>
+        <div class="text">
+          <p><strong>Accessible and sharable data for secondary analysis</strong></p>
+          <p>
+          When I teach students how important data sharing is, I use Databrary as an example of how to actually make videos accessible and sharable. Secondary data analysis is the way of the future.
+          </p>
+          <p>&nbsp; &nbsp; <em>&mdash; Kathy Hirsh-Pasek, Professor of Psychology, Temple University</em></p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="center-container">
+          <a target="_blank" href="/party/11">
+            <img src="https://mlsvc01-prod.s3.amazonaws.com/f5f1847d001/3068d0e6-1705-4d84-bb25-a629a6c5dddf.jpg?ver=1458588683000" class="alignright">
+          </a>
+        </div>
+        <div class="text">
+          <p><strong>Faster collaboration</strong></p>
+          <p>
+          We use Databrary to make coding across labs - and across countries - easier and faster. For example, our collaborator in Korea posts videos he collected that students here then download and code. We don't have to worry about waiting for secure access to those files, and he gets the coding files faster, too.
+          </p>
+          <p>&nbsp; &nbsp; <em>&mdash; Catherine Tamis-LeMonda, Professor of Applied Psychology, NYU</em></p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="center-container">
+          <a target="_blank" href="https://www.databrary.org/community/board.html">
+            <img src="http://psych.nyu.edu/gureckis/gureckis.jpg" class="alignleft">
+          </a>
+        </div>
+        <div class="text">
+          <p><strong>A secure and confidential framework to meet IRB concerns</strong></p>
+          <p>
+          The work that Databrary has done on working though these IRB issues is really impressive. It's a really important contribution to the field to tackle the difficulties around sharing video data in a secure and confidential way.
+          </p>
+          <p>&nbsp; &nbsp; <em>&mdash; Todd Gureckis, Associate Professor of Psychology, NYU</em></p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="center-container">
+          <a target="_blank" href="/party/32">
+            <img src="/web/images/testimonials/lana_karasik.jpg" class="alignright">
+          </a>
+        </div>
+        <div class="text">
+          <p><strong>Easily accessible data management and storage </strong></p>
+          <p>
+          Databrary is a useful data management and storage system, and lets me avoid unreliable hard-drives and bulky filing cabinets. In Databrary, files are stored together with linked metadata. I can clearly tell within a dataset how many participants are included, which aren’t and why, and sample characteristics - which is also very useful to generate grant reports.
+          </p>
+          <p>&nbsp; &nbsp; <em>&mdash; Lana Karasik, Assistant Professor of Psychology, CUNY</em></p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="center-container">
+          <a target="_blank" href="/party/1117">
+            <img src="/web/images/testimonials/vikram_jaswal.jpg" class="alignleft">
+          </a>
+        </div>
+        <div class="text">
+          <p><strong>Efficient workflow and secure sharing</strong></p>
+          <p>
+          So much of my lab's research depends on the video data we collect. Databrary has made our video storage and workflow process so much more efficient. Having all of our video in one reliable, secure place has made it simple and convenient to share data within the lab and with collaborators at other institutions. And you can’t beat the cost! (Free!)
+          </p>
+          <p>&nbsp; &nbsp; <em>&mdash; Vikram Jaswal, Associate Professor of Psychology, University of Virginia</em></p>
+        </div>
+      </div>
+      <div class="stream-nav left" ng-click="plusDivs(-1)">
+      </div>
+      <div class="stream-nav right" ng-click="plusDivs(+1)">
+      </div>
+    </div>
+    <div class="arrow-container"><a class="arrow-a"><span class="arrow-down"></span></a></div>
+  </div>
+  <!--testimonials ends-->
+  <!--stat begins-->
+  <div class="home-bigbuttons section">
     <div class="bigbuttons-text">
-      <p>Databrary is a video data library for developmental science.
-        <br>Share videos, audio files, and related metadata. Discover more, faster.
-      </p>
       <div class="view-center-block">
-        <ul class="flat hide-mobile inline-block">
-          <li>
-            <span class="home-stats-num">{{::stats.authorized[page.permission.EDIT] | number:0}} </span>
-            <small class="inline-block">investigators</small>
-          </li>
-          <li>
-            <span class="home-stats-num">{{::stats.authorized[page.permission.READ] | number:0}} </span>
-            <small class="inline-block">affiliates</small>
-          </li>
-          <li>
-            <span class="home-stats-num">{{::stats.authorized[page.permission.ADMIN] | number:0}} </span>
-            <small class="inline-block">institutions</small>
-          </li>
-          <hr class="home-stats-split">
-          <li>
-            <span class="home-stats-num">{{::stats.volumes | number:0}} </span>
-            <small class="inline-block">total<br>volumes </small>
-          </li>
-          <li>
-            <span class="home-stats-num">{{::stats.shared | number:0}} </span>
-            <small class="inline-block">shared<br>volumes</small>
-          </li>
-          <li>
-            <span class="home-stats-num">{{::stats.assets | number:0}} </span>
-            <small class="inline-block">files </small>
-          </li>
-          <li>
-            <span class="home-stats-num">{{::stats.duration/(1000*60*60) | number:0}} </span>
-            <small class="inline-block">hours of <br>recordings </small>
-          </li>
-          <li>
-            <span class="home-stats-num">{{::stats.records[page.constants.categoryName.participant.id] | number:0}} </span>
-            <small class="inline-block">participants</small>
-          </li>
-          <hr>
+        <ul class="flat inline-block">
+          <li><h2 class="count home-stats-num">681</h2>&nbsp; <bluetext class="inline-block">investigators</bluetext></li>
+          <li><h2 class="count home-stats-num">290</h2>&nbsp; <bluetext class="inline-block">affiliates</bluetext></li>
+          <li><h2 class="count home-stats-num">378</h2>&nbsp; <bluetext class="inline-block">institutions</bluetext></li>
+          <li><h2 class="count home-stats-num">13,786</h2>&nbsp; <bluetext class="inline-block">hours of recordings</bluetext></li>
+          <!-- <li><h2 class="count home-stats-num">{{::stats.authorized[page.permission.EDIT] | number:0}}</h2>&nbsp; <bluetext class="inline-block">investigators</bluetext></li>
+          <li><h2 class="count home-stats-num">{{::stats.authorized[page.permission.READ] | number:0}}</h2>&nbsp; <bluetext class="inline-block">affiliates</bluetext></li>
+          <li><h2 class="count home-stats-num">{{::stats.authorized[page.permission.ADMIN] | number:0}}</h2>&nbsp; <bluetext class="inline-block">institutions</bluetext></li>
+          <li><h2 class="count home-stats-num">{{::stats.duration/(1000*60*60) | number:0}}</h2>&nbsp; <bluetext class="inline-block">hours of recordings</bluetext></li> -->
         </ul>
       </div>
-    </div>
-    <div class="bigbuttons-container">
-      <div class="bigbutton" ng-show="::!page.models.Login.isLoggedIn()">
-        <img src="/web/icons/login.svg"/>
-        <span class="button-title">
-          <a ng-href="{{::page.router.login()}}" class="modal-button">Login</a> or 
-          <a ng-href="{{::page.router.register()}}">Register</a></span>
       </div>
-      <a ng-href="{{::page.router.profile()}}" ng-show="::page.models.Login.isLoggedIn()">
-        <div class="bigbutton">
-          <img src="/web/icons/home-profile.svg"/>
-          <span class="button-title">Your Profile</span>
-          <p class="hide-mobile">Manage your data and authorizations.</p>
-        </div>
-      </a>
-      <a ng-href="{{::page.router.search()}}?volume">
-        <div class="bigbutton">
-          <img src="/web/icons/home-searchstudy.svg"/>
-          <span class="button-title">Browse Data</span>
-        </div>
-      </a>
-      <a ng-href="{{::page.router.search()}}?volume=false&f.party_authorization={{::page.constants.permission.EDIT}}&f.party_is_institution=false">
-        <div class="bigbutton">
-          <img src="/web/icons/home-userstudy.svg"/>
-          <span class="button-title">Browse People</span>
-        </div>
-      </a>
-    </div>
   </div>
-  <div class="wrap">
-    <div class="row">
-      <div class="col-desktop-10 col-tablet-6 col-mobile-6">
-        <article class="home-panel home-feature row hide-mobile" ng-if="::volume">
-          <div class="home-feature-inner">
-            <img ng-src="{{::volume.thumbRoute()}}" class="home-feature-thumb clickable" ng-click="page.$location.url(volume.route())">
-
-            <div class="home-section-text">
-              <div class="home-sections-title"><span class="icon volume"></span><span message="welcome.featured"></span></div><br>
-              <a class="small" ng-href="{{::volume.route()}}" ng-bind="::volume.name"></a>
-
-              <div class="home-feature-investigators">
-                <volume-owners></volume-owners>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="home-panel home-activity row">
-          <span class="home-section-text home-sections-title"><span class="icon activity"></span>Recent Activity</span>
-          <dl class="home-section-text">
-            <dt class="small" ng-repeat-start="act in ::activity">
-              <time datetime="{{::act.time | date:'yyyy-MM-dd HH:mm:ss Z'}}" pubdate>
-                {{::act.time | date}}
-              </time>
-            </dt>
-            <dd class="home-activity-volume" ng-if="::act.volume" ng-init="volume=act.volume">
-              <p class="small">New shared data</p>
-              <img class="volume-thumb" ng-src="{{::volume.thumbRoute(72)}}">
-              <div>
-                <a class="volume-name" ng-href="{{::volume.route()}}" ng-bind="::volume.name"></a>
-                <div class="volume-list-investigators">
-                  <volume-owners></volume-owners>
-                </div>
-              </div>
-            </dd>
-            <dd ng-repeat-end ng-if="::act.party" ng-init="party=act.party">
-              <p class="small">New authorized <span ng-if="::party.institution">institution</span><span ng-if="::!party.institution">investigator</span></p>
-              <portrait></portrait>
-            </dd>
-          </dl>
-        </article>
-      </div>
-      <div class="col-desktop-5 col-tablet-3 col-mobile-6">
-        <div class="home-panel home-supportad">
-          Get started with our <a href="//databrary.org/access/guide.html">User Guide</a>, and get the <a href="//databrary.org/news.html">latest news</a>.<br/>
-          <a href="//databrary.org/about/support.html">Online support sessions</a> also available at your convenience, Monday to Friday from 9am&ndash;5pm Eastern time.
-        </div>
-        <div class="home-tags">
-          <span class="home-sections-title"><span class="icon tag"></span>Top Tags</span>
-          <ol>
-            <a ng-repeat="tag in ::tags" ng-href="{{::page.router.search()}}?volume&f.tag_name=&quot;{{::tag}}&quot;">
-              <li class="home-tags-item tags-item" ng-bind="::tag"></li>
-            </a>
-          </ol>
-        </div>
-      </div>
-    </div>
+  <!--stat ends-->
+  <!--map begins-->
+  <div id="map_wrapper">
+      <div id="map_canvas" class="mapping"></div>
   </div>
+  <!--map ends-->
 </article>

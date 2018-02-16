@@ -5,7 +5,7 @@
   <div class="wrap toolbar-main" ng-class="{'hover-nav-bg':hover==='nav'}">
     <div class="row">
       <div class="title cf col-desktop-7" ng-class="{'col-tablet-5 col-mobile-3': (hover!=='nav')&&page.models.Login.isLoggedIn(), 'col-tablet-5 col-mobile-2': (hover!=='nav')&&!page.models.Login.isLoggedIn(),'col-mobile-5':hover==='nav'}">
-        <div class="toolbar-site" ng-show="page.$route.current.controller!=='site/home'">
+        <div class="toolbar-site">
           <a ng-class="::{sandbox:page.constants.sandbox}" ng-href="{{::page.router.index()}}" title="Databrary: An Open Data Library"></a>
         </div>
 
