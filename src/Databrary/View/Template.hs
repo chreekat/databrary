@@ -81,21 +81,6 @@ htmlFooter = H.footer H.! HA.id "site-footer" H.! HA.class_ "site-footer" $
       H.div H.! HA.class_ "site-footer-social-address" $ do
         htmlAddress
         htmlSocialMedia
-      H.ul H.! HA.class_ "site-footer-grants col-desktop-8 col-tablet-5 col-mobile-6" $ do
-        H.li $
-          H.a H.! HA.href "http://www.nsf.gov/awardsearch/showAward?AWD_ID=1238599&HistoricalAwards=false" $ do
-            H.img H.! HA.src "/web/images/grants/nsf.png" H.! HA.class_ "nsf"
-            " BCS-1238599"
-        H.li $
-          H.a H.! HA.href "http://projectreporter.nih.gov/project_info_description.cfm?aid=8531595&icde=15908155&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC" $ do
-            H.img H.! HA.src "/web/images/grants/nih.png" H.! HA.class_ "nih"
-            " U01-HD-076595"
-        H.li $
-          H.a H.! HA.href "https://www.srcd.org/" $ do
-            H.img H.! HA.src "/web/images/grants/srcd.png" H.! HA.class_ "srcd"
-        H.li $
-          H.a H.! HA.href "https://sloan.org/" $ do
-            H.img H.! HA.src "/web/images/grants/sloan.png" H.! HA.class_ "sloan"
       H.div H.! HA.class_ "site-footer-legal col" $ do
         H.p $ do
           void "Each dataset on Databrary represents an individual work owned by the party who contributed it. Data on Databrary is provided for non-commercial use and is subject to the terms of use outlined in the "
